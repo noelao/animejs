@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <title>Latihan AnimeJS</title>
     <style>
-        .bola {
+        .square {
             width: 50px;
             height: 50px;
-            background-color: #ff4757;
-            border-radius: 50%;
-            margin-top: 50px;
+            background-color: #000000; /* atau warna lain */
+        }
+        .medium {
+            width: 50px;
+            height: 50px;
+        }
+        .docs-demo {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
         }
     </style>
 </head>
+<style>
+
+</style>
 <body>
 
-    <h1>AnimeJS via Express Middleware</h1>
-    <button id="playBtn">Tendang Bola!</button>
-    <div class="bola"></div>
+<div class="docs-demo">
 
-    <script src="/js/anime.umd.min.js"></script>
+<div class="medium row">
+  <div class="square"></div>
+  <span class="padded label">JS / WAAPI</span>
+</div>
+<div class="medium row">
+  <div class="square"></div>
+  <span class="padded label">WAAPI</span>
+</div>
 
-    <script>
-        // Langsung gass ngoding animasinya
-        const {anime} = anime;
-    </script>
+</div>
+    
+
+<script src="/js/anime.umd.min.js"></script>
+
+<script>
+const { animate } = anime;
+
+animate('.square', {
+  x: '15rem', // TranslateX shorthand
+  scale: 1.25,
+  skew: -45,
+  rotate: '1turn',
+});
+
+// the WAAPI version is recommanded if you want to animate the transform property directly
+waapi.animate('.square', {
+  transform: 'translateX(15rem) scale(1.25) skew(-45deg) rotate(1turn)',
+});
+</script>
+
+
 </body>
 </html>
